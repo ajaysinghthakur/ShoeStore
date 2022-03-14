@@ -5,18 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.NavHostFragment
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [InstructionFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class InstructionFragment : Fragment() {
 
 
@@ -30,7 +24,14 @@ class InstructionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_instruction, container, false)
+        val binding = DataBindingUtil.inflate<FragmentInstructionBinding>(inflater, R.layout.fragment_instruction, container, false)
+
+        binding.instructionsNextButton.setOnClickListener {
+            val action = WelcomeFragmentDirections.actionWelcomeToInstruction()
+            NavHostFragment.findNavController(this).navigate(action)
+        }
+
+        return binding.root
     }
 
 }

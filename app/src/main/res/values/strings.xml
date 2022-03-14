@@ -9,8 +9,8 @@
 
     <!-- Strings related to onboarding -->
     <string name="next_button">Next</string>
-    <string name="welcome_header">Welcome to the Shoe Inventory App!</string>
-    <string name="welcome_body">Here you can store and retrieve shoe information at your leisure.</string>
+    <string name="welcome_header">Welcome to the Shoe Store App!</string>
+    <string name="welcome_body">Here you can store and retrieve shoe information at your convenience.</string>
     <string name="instructions_header">Instructions</string>
     <string name="previous_button">Previous</string>
 
