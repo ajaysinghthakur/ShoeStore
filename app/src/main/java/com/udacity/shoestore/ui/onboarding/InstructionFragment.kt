@@ -27,7 +27,7 @@ class InstructionFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentInstructionBinding>(inflater, R.layout.fragment_instruction, container, false)
 
         binding.instructionsNextButton.setOnClickListener {
-            val action = WelcomeFragmentDirections.actionWelcomeToInstruction()
+            val action = InstructionFragmentDirections.actionInstructionFragmentToHomeNavigation()
             NavHostFragment.findNavController(this).navigate(action)
         }
 

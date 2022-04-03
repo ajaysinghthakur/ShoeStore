@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shoeData"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/shoe_name + shoeData.name}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text_color"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/size_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/shoe_size + shoeData.size}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text_color"
+            android:visibility="visible" />
+
+
+        <TextView
+            android:id="@+id/company_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/company_name + shoeData.company}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text_color"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/description_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/description + shoeData.description}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text_color"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</layout>
