@@ -11,7 +11,7 @@ android {
     buildToolsVersion '32.0.0'
     defaultConfig {
         applicationId "com.udacity.shoestore"
-        minSdkVersion 22
+        minSdkVersion 30
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"

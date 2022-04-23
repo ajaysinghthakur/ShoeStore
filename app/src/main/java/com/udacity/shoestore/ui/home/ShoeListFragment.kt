@@ -42,7 +42,7 @@ class ShoeListFragment : Fragment() {
             }
         })
 
-        binding.fab.setOnClickListener {
+        binding.addFab.setOnClickListener {
             Timber.i("in addShoeButton listener")
             Timber.i(viewModel.shoeList.value?.joinToString(separator = "\n"))
             val action = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment()

@@ -12,7 +12,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        android:background="#7CF4F0F0">
 
         <TextView
             android:id="@+id/name_label"
@@ -21,6 +24,7 @@
             android:text="@{@string/shoe_name + shoeData.name}"
             android:textAlignment="viewStart"
             android:textColor="@color/text_color"
+            android:layout_marginBottom="10dp"
             android:visibility="visible" />
 
         <TextView
@@ -30,6 +34,7 @@
             android:text="@{@string/shoe_size + shoeData.size}"
             android:textAlignment="viewStart"
             android:textColor="@color/text_color"
+            android:layout_marginBottom="10dp"
             android:visibility="visible" />
 
 
@@ -40,6 +45,7 @@
             android:text="@{@string/company_name + shoeData.company}"
             android:textAlignment="viewStart"
             android:textColor="@color/text_color"
+            android:layout_marginBottom="10dp"
             android:visibility="visible" />
 
         <TextView

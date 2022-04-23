@@ -1,8 +1,6 @@
 package com.udacity.shoestore.ui.login
 
-import android.database.DatabaseUtils
 import android.os.Bundle
-import android.renderscript.ScriptGroup
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +12,6 @@ import com.udacity.shoestore.databinding.FragmentLoginBinding
 
 
 class LoginFragment : Fragment() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +25,7 @@ class LoginFragment : Fragment() {
         val binding: FragmentLoginBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container,false)
 
         binding.login.setOnClickListener {
-            this.navigationToWelcome()
+            this.navigationToShoeList()
         }
 
         binding.signup.setOnClickListener {
@@ -43,4 +40,8 @@ class LoginFragment : Fragment() {
         NavHostFragment.findNavController(this).navigate(action)
     }
 
+    private fun navigationToShoeList() {
+        val action = LoginFragmentDirections.actionLoginFragmentToHomeNavigation()
+        NavHostFragment.findNavController(this).navigate(action)
+    }
 }
