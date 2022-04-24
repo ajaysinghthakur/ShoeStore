@@ -40,12 +40,18 @@ class ShoeDetailFragment : Fragment() {
 
 
         fragmentViewBinding.canceButton.setOnClickListener {
-            findNavController().popBackStack()
+            findNavController().navigateUp()
         }
 
         fragmentViewBinding.saveButton.setOnClickListener {
             if (validateInputs()) {
-                val size = fragmentViewBinding.sizeText.text
+                val name = fragmentViewBinding.shoeNameText.text.toString()
+                val size = fragmentViewBinding.sizeText.text.toString().toDouble()
+                val company = fragmentViewBinding.companyText.text.toString()
+                val descroption = fragmentViewBinding.descriptionText.text.toString()
+
+                viewModel.addShoe(name = name, size = size, company = company, description = descroption)
+                findNavController().navigateUp()
             } else {
                 // show alert or something
             }
