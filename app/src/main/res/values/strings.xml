@@ -38,4 +38,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!--    Errors-->
+    <string name="error_string"> Field cannot be empty</string>
+    <string name="size_error_string">Size cannot be zero or enter correct format</string>
+
 </resources>

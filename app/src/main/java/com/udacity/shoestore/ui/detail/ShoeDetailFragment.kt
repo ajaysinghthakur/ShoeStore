@@ -7,9 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.ShoeListViewModel
+
+import com.udacity.shoestore.extension.validateDouble
+import com.udacity.shoestore.extension.validateString
 
 
 /**
@@ -21,6 +25,8 @@ class ShoeDetailFragment : Fragment() {
 
     private val viewModel : ShoeListViewModel by activityViewModels()
 
+    lateinit var fragmentViewBinding: FragmentShoeDetailBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -30,17 +36,43 @@ class ShoeDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding: FragmentShoeDetailBinding =  DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
+        fragmentViewBinding =  DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
 
 
-        binding.canceButton.setOnClickListener {
+        fragmentViewBinding.canceButton.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+        fragmentViewBinding.saveButton.setOnClickListener {
+            if (validateInputs()) {
+                val size = fragmentViewBinding.sizeText.text
+            } else {
+                // show alert or something
+            }
 
         }
 
-        binding.saveButton.setOnClickListener {
-            
+        return fragmentViewBinding.root
+    }
+
+    private fun validateInputs() : Boolean {
+        var validInputs = true
+
+        if (!(fragmentViewBinding.shoeNameText.validateString())) {
+            validInputs = false
+        }
+        if (!(fragmentViewBinding.companyText.validateString())) {
+            validInputs = false
         }
 
-        return binding.root
+        if (!(fragmentViewBinding.sizeText.validateDouble())) {
+            validInputs = false
+        }
+
+        if (!(fragmentViewBinding.descriptionText.validateString())) {
+            validInputs = false
+        }
+
+        return validInputs
     }
 }
