@@ -55,8 +55,26 @@ class ShoeListFragment : Fragment() {
         return binding.root
     }
 
+
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.logout_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.loginFragment -> {
+                logout()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
+    private fun logout() {
+//        val action = ShoeListFragmentDirections.actionShoeListFragmentToNavigation()
+//        findNavController().navigate(action)
     }
 }

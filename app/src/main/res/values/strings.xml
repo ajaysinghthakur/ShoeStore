@@ -42,4 +42,8 @@
     <string name="error_string"> Field cannot be empty</string>
     <string name="size_error_string">Size cannot be zero or enter correct format</string>
 
+<!--    Titles-->
+    <string name="login">LOGIN</string>
+    <string name="welcome">WELCOME</string>
+
 </resources>
