@@ -45,5 +45,8 @@
 <!--    Titles-->
     <string name="login">LOGIN</string>
     <string name="welcome">WELCOME</string>
+    <string name="instructions">INSTRUCTIONS</string>
+    <string name="shoe_list">Shoe List</string>
+    <string name="shoe_detail">Shoe Detail</string>
 
 </resources>

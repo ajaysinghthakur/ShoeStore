@@ -41,7 +41,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun navigationToShoeList() {
-        val action = LoginFragmentDirections.actionLoginFragmentToHomeNavigation()
+        val action = LoginFragmentDirections.actionLoginFragmentToShoeListFragment()
         NavHostFragment.findNavController(this).navigate(action)
     }
 }

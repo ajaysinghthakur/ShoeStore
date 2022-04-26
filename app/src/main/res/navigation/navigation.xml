@@ -6,6 +6,23 @@
     app:startDestination="@id/loginFragment">
 
     <fragment
+        android:id="@+id/shoeListFragment"
+        android:name="com.udacity.shoestore.ui.home.ShoeListFragment"
+        android:label="@string/shoe_list"
+        tools:layout="@layout/fragment_shoe_list">
+        <action
+            android:id="@+id/action_shoeListFragment_to_shoeDetailFragment"
+            app:destination="@id/shoeDetailFragment" />
+        <action
+            android:id="@+id/action_shoeListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.udacity.shoestore.ui.detail.ShoeDetailFragment"
+        android:label="@string/shoe_detail"
+        tools:layout="@layout/fragment_shoe_detail" />
+    <fragment
         android:id="@+id/loginFragment"
         android:name="com.udacity.shoestore.ui.login.LoginFragment"
         android:label="@string/login"
@@ -14,14 +31,14 @@
             android:id="@+id/action_login_to_welcome"
             app:destination="@id/welcomeFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_home_navigation"
-            app:destination="@id/home_navigation" />
+            android:id="@+id/action_loginFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.udacity.shoestore.ui.onboarding.WelcomeFragment"
-        android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" >
+        android:label="@string/welcome"
+        tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_welcome_to_instruction"
             app:destination="@id/instructionFragment" />
@@ -29,11 +46,10 @@
     <fragment
         android:id="@+id/instructionFragment"
         android:name="com.udacity.shoestore.ui.onboarding.InstructionFragment"
-        android:label="fragment_instruction"
-        tools:layout="@layout/fragment_instruction" >
+        android:label="@string/instructions"
+        tools:layout="@layout/fragment_instruction">
         <action
-            android:id="@+id/action_instructionFragment_to_home_navigation"
-            app:destination="@id/home_navigation" />
+            android:id="@+id/action_instructionFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
     </fragment>
-    <include app:graph="@navigation/home_navigation" />
 </navigation>
