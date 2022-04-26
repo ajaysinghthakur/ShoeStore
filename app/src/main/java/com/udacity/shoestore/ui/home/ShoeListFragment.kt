@@ -74,7 +74,7 @@ class ShoeListFragment : Fragment() {
 
 
     private fun logout() {
-//        val action = ShoeListFragmentDirections.actionShoeListFragmentToNavigation()
-//        findNavController().navigate(action)
+        val action = ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment()
+        findNavController().navigate(action)
     }
 }

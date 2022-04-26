@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        val binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         setContentView(binding.root)
 
         Timber.plant(Timber.DebugTree())
@@ -28,7 +29,10 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
-        appBarConfiguration = AppBarConfiguration(navController.graph, null)
+
+        //In some cases, you might need to define multiple top-level destinations instead of using the default start destination
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.loginFragment, R.id.shoeListFragment))
+//        appBarConfiguration = AppBarConfiguration(navController.graph, null)
 
         setSupportActionBar(binding.toolbar)
 
@@ -36,8 +40,12 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onNavigateUp(): Boolean {
-        navController = this.findNavController((R.id.nav_host_fragment))
-        return navController.navigateUp()
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
+//    override fun onNavigateUp(): Boolean {
+////        navController = this.findNavController((R.id.nav_host_fragment))
+////        return navController.navigateUp()
+//        return NavigationUI.navigateUp(navController, appBarConfiguration)
+//    }
 }
